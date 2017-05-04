@@ -1,20 +1,27 @@
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
-import utils.Account;
-import utils.Source;
+import br.com.moeda.utils.Account;
+import br.com.moeda.utils.Source;
 
 public class Principal {
 	public static void main(String[] args) {
 		
 		try {
 			Source s = new Source("20170502");
-			Account a = s.findByCoin("AFN");
-			System.out.println(a.getCoin());
+			Account from = s.findByCoin("USD");
+			Account to = s.findByCoin("EUR");
+			Double x = (from.getParitySale()/to.getParitySale())*2;
+			 
+			System.out.println(new BigDecimal(x).setScale(2, BigDecimal.ROUND_HALF_UP).toString());
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO: handle exception
 			e.printStackTrace();
 		}
 	}

@@ -1,4 +1,4 @@
-package utils;
+package br.com.moeda.utils;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -20,7 +20,8 @@ public class CsvReader {
 	
 	public static Function<String, Account> mapToAccount = (line) -> {
 		String[] c = line.split(SEPARATOR);
-		return new Account(c[1],c[2], c[3], c[4], c[5], c[6]);
+		Double paritySale = Double.parseDouble(c[6].replace(",", "."));
+		return new Account(c[1],c[2], c[3], c[4], c[5], paritySale);
 	};
 	
 	public static CsvReader get(){

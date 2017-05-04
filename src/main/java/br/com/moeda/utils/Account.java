@@ -1,8 +1,8 @@
-package utils;
+package br.com.moeda.utils;
 public class Account {
 	
 	public Account(String coinId, String type, String coin, String purchaseRate, String purchaseParity,
-			String paritySale) {
+			Double paritySale) {
 		super();
 		this.coinId = coinId;
 		this.type = type;
@@ -22,7 +22,7 @@ public class Account {
 	
 	private String purchaseParity;
 	
-	private String paritySale;
+	private Double paritySale;
 
 	public String getCoinId() {
 		return coinId;
@@ -64,11 +64,11 @@ public class Account {
 		this.purchaseParity = purchaseParity;
 	}
 
-	public String getParitySale() {
+	public Double getParitySale() {
 		return paritySale;
 	}
 
-	public void setParitySale(String paritySale) {
+	public void setParitySale(Double paritySale) {
 		this.paritySale = paritySale;
 	}
 
