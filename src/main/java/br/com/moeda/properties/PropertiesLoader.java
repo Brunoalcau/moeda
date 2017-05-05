@@ -1,4 +1,4 @@
-package br.com.moeda.utils;
+package br.com.moeda.properties;
 
 import java.io.IOException;
 import java.io.InputStream;

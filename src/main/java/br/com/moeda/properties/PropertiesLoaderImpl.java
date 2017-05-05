@@ -1,4 +1,4 @@
-package br.com.moeda.utils;
+package br.com.moeda.properties;
 
 public class PropertiesLoaderImpl {
 	private static PropertiesLoader propertiesLoader = new PropertiesLoader();
